@@ -1,3 +1,4 @@
+import React from 'react';
 import { TouchableOpacityProps } from 'react-native';
 import { ArrowIcon, Container, Description, TextPercentage } from './styles';
 

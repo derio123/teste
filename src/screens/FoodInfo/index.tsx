@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { CommonActions, useNavigation, useRoute } from '@react-navigation/native';
 import { FoodInfoParams } from '../../@types/navigation';

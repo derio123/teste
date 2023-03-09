@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { StatisticsParams } from '../../@types/navigation';
 import {

@@ -18,6 +18,8 @@ import {
   TextDiet,
   WrapperInput,
 } from './styles';
+import React from 'react';
+import { ScrollView } from 'react-native';
 
 export function AddFood() {
   const navigation = useNavigation();
@@ -46,7 +48,7 @@ export function AddFood() {
     const id = uuid.v4() as string;
 
     await addFood({ id, name, description, date, hour, onTheDiet: onTheDiet === 'yes' });
-    console.log(name, description, date, hour,onTheDiet);
+    console.log(name, description, date, hour, onTheDiet);
 
     setTimeout(() => navigation.navigate('afterAddFood', { onTheDiet: onTheDiet === 'yes' }), 1000);
   }
@@ -67,43 +69,45 @@ export function AddFood() {
           </Header>
 
           <Content>
-            <ContentInput>
-              <Label>Nome</Label>
-              <Input onChangeText={(value: string) => setName(value)} />
-            </ContentInput>
-
-            <ContentInput>
-              <Label>Descrição</Label>
-              <Input multiline onChangeText={(value: string) => setDescription(value)} />
-            </ContentInput>
-
-            <ContentInput row>
-              <WrapperInput>
-                <Label>Data</Label>
-                <Input onChangeText={(value: string) => setDate(value)} />
-              </WrapperInput>
-
-              <WrapperInput>
-                <Label>Hora</Label>
-                <Input onChangeText={(value: string) => setHour(value)} />
-              </WrapperInput>
-            </ContentInput>
-
-            <ContentInput>
-              <Label>Está dentro da dieta?</Label>
-              <ContentInput row>
-                <ButtonDiet onPress={() => onPressButtonDiet('yes')} active={onTheDiet === 'yes'} green>
-                  <Status green />
-                  <TextDiet>Sim</TextDiet>
-                </ButtonDiet>
-                <ButtonDiet onPress={() => onPressButtonDiet('no')} active={onTheDiet === 'no'} red>
-                  <Status />
-                  <TextDiet>Não</TextDiet>
-                </ButtonDiet>
+            <ScrollView>
+              <ContentInput>
+                <Label>Nome</Label>
+                <Input onChangeText={(value: string) => setName(value)} />
               </ContentInput>
-            </ContentInput>
 
-            <Button title="Cadastrar refeição" style={{ marginTop: 80 }} onPress={onSubmit} />
+              <ContentInput>
+                <Label>Descrição</Label>
+                <Input multiline onChangeText={(value: string) => setDescription(value)} />
+              </ContentInput>
+
+              <ContentInput row>
+                <WrapperInput>
+                  <Label>Data</Label>
+                  <Input onChangeText={(value: string) => setDate(value)} />
+                </WrapperInput>
+
+                <WrapperInput>
+                  <Label>Hora</Label>
+                  <Input onChangeText={(value: string) => setHour(value)} />
+                </WrapperInput>
+              </ContentInput>
+
+              <ContentInput>
+                <Label>Está dentro da dieta?</Label>
+                <ContentInput row>
+                  <ButtonDiet onPress={() => onPressButtonDiet('yes')} active={onTheDiet === 'yes'} green>
+                    <Status green />
+                    <TextDiet>Sim</TextDiet>
+                  </ButtonDiet>
+                  <ButtonDiet onPress={() => onPressButtonDiet('no')} active={onTheDiet === 'no'} red>
+                    <Status />
+                    <TextDiet>Não</TextDiet>
+                  </ButtonDiet>
+                </ContentInput>
+              </ContentInput>
+
+              <Button title="Cadastrar refeição" style={{ marginBottom: 20 }} onPress={onSubmit} />
+            </ScrollView>
           </Content>
         </Container>
       )}

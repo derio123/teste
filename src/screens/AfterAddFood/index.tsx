@@ -1,7 +1,9 @@
+
 import { CommonActions, useNavigation, useRoute } from '@react-navigation/native';
 import { AfterAddFoodProps } from '../../@types/navigation';
 import { Button } from '../../components';
 import { Container, ContentText, Description, Image, Title } from './styles';
+import React from 'react';
 
 export function AfterAddFood() {
   const route = useRoute();

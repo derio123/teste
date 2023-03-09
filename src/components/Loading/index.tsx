@@ -1,3 +1,4 @@
+import React from 'react';
 import loadAnimation from '../../assets/loading.json';
 import { AnimatedLoading, Container } from './styles';
 

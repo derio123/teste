@@ -1,3 +1,4 @@
+import React from 'react';
 import { ModalProps } from 'react-native';
 import { Button } from '../Button';
 import { Container, Content, ContentButton, ModalContainer, TextModal } from './styles';

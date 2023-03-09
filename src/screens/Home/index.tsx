@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { SectionList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -109,7 +110,7 @@ export function Home() {
 
       <SectionList
         sections={data}
-        keyExtractor={(_, index) => index.toString()}
+        keyExtractor={(_item, index) => index.toString()}
         renderSectionHeader={({ section }) => <FoodDay>{section.day}</FoodDay>}
         stickySectionHeadersEnabled={false}
         showsVerticalScrollIndicator={false}

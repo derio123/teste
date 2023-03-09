@@ -28,7 +28,7 @@ async function addFoodDays(day: string) {
 
     const days = JSON.parse(data);
 
-    if (days.find((item) => item === day)) return;
+    if (days !== null) return;
 
     await useAsyncStorage('days').setItem(JSON.stringify([day, ...days]));
   } catch (err) {

@@ -4,6 +4,7 @@ import { Nunito_400Regular, Nunito_700Bold, useFonts } from '@expo-google-fonts/
 import { Loading } from './src/components';
 import { Routes } from './src/routes';
 import theme from './src/theme';
+import React from 'react';
 
 export default function App() {
   const [fontsLoading] = useFonts({

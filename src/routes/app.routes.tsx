@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import { AddFood, AfterAddFood, EditFood, FoodInfo, Home, Statistics } from '../screens';
 
 const { Navigator, Screen } = createNativeStackNavigator();
